@@ -1,17 +1,18 @@
 library(ggplot2)
-extrafont::loadfonts(device="win")
+extrafont::font_import(paths = "fonts/",prompt = F)
+extrafont::loadfonts(device = "win")
 
 #' My Prefered ggplot2 theme
 #'
 #' @description
 #' A custom theme with
 theme_delabj <- function(){
-  ggplot2::theme_minimal(base_size=12, base_family = "Inconsolata") %+replace%
+  ggplot2::theme_minimal(base_size=12, base_family = "Poppins") %+replace%
   theme(
     plot.title.position = "plot",
     legend.position = "bottom",
-    plot.background = element_rect(fill="#f9f1f1", color = "#f9f1f1"),
-    panel.grid.major = element_line(color="#F3F3F3",
+    plot.background = element_rect(fill="#F9F1F1", color = "#F9F1F1"),
+    panel.grid.major = element_line(color="#D6D6D6",
                                     size=0.5,
                                     linetype = "solid",
                                     lineend = "butt"),
