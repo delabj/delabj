@@ -1,12 +1,12 @@
 library(ggplot2)
-
+extrafont::loadfonts(device="win")
 
 #' My Prefered ggplot2 theme
 #'
 #' @description
 #' A custom theme with
 theme_delabj <- function(){
-  ggplot2::theme_minimal(base_size=12) %+replace%
+  ggplot2::theme_minimal(base_size=12, base_family = "Inconsolata") %+replace%
   theme(
     plot.title.position = "plot",
     legend.position = "bottom",
