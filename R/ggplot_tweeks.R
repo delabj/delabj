@@ -1,9 +1,16 @@
 library(ggplot2)
 
-theme_delabj <- ggplot2::theme_minimal(base_size=12) %+replace%
+
+#' My Prefered ggplot2 theme
+#'
+#' @description
+#' A custom theme with
+theme_delabj <- function(){
+  ggplot2::theme_minimal(base_size=12) %+replace%
   theme(
     plot.title.position = "plot",
     legend.position = "bottom",
+    plot.background = element_rect(fill="#f9f1f1", color = "#f9f1f1"),
     panel.grid.major = element_line(color="#F3F3F3",
                                     size=0.5,
                                     linetype = "solid",
@@ -13,16 +20,10 @@ theme_delabj <- ggplot2::theme_minimal(base_size=12) %+replace%
                                     linetype = "solid",
                                     lineend = "butt")
 
+
     )
+}
 
-
-df <- data.frame(x = factor(rep(letters[1:3], each = 10)), y = rnorm(30), color=(rep(c("A", "B"), each=5)))
-plot <- ggplot(df, aes(x = x, y = y, color=color)) + geom_point()
-
-plot + ggtitle("No theme")
-
-plot + theme_delabj+
-  ggtitle("theme delabj")
 
 #' Easily adjust ggplot2 gridlines
 #'
