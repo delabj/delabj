@@ -2,12 +2,42 @@ library(ggplot2)
 extrafont::font_import(paths = "fonts/",prompt = F)
 extrafont::loadfonts(device = "win")
 
-#' My Prefered ggplot2 theme
+#' My Prefered ggplot2 themes
 #'
 #' @description
-#' A custom theme with
+#' A custom theme for ggplot2 based on theme_minimal(). A light and dark theme are both available.
+#' @usage theme_delabj(
+#' base_size =12,
+#' base_family = "Poppins",
+#' base_line_size = .5,
+#' base_rect_size = .5)
+#'
+#' theme_delabj_dark(
+#' base_size = 12,
+#' base_family = "Poppins",
+#' base_line_size = base_size/22,
+#' base_rect_size = base_size/22)
+#'
+#' @param base_size base font size
+#' @param base_family base font family (Poppins by default)
+#' @param base_line_size base size for line elements
+#' @param base_rect_size base size for rect elements
+#'
+#' @details theme_delabj has an off white background and light gridlines.
+#' theme_delabj has a dark grey background and dark gridlines.
+#'
+#' @examples
+#' df <- data.frame(x = factor(rep(letters[1:5], each = 10)), y = rnorm(50), color=(rep(c("A", "B", "C", "B", "A"), each=10)))
+#' plot <- ggplot(df, aes(x = x, y = y, color=color)) + geom_jitter()
+#'
+#'
+#' plot + theme_delabj
+#'
+#' plot + theme_delabj_dark
+
 theme_delabj <- function(){
-  ggplot2::theme_minimal(base_size=12, base_family = "Poppins") %+replace%
+  ggplot2::theme_minimal(base_size=12, base_family = "Poppins",
+                         base_line_size = .5, base_rect_size = .5 ) %+replace%
   theme(
     plot.title.position = "plot",
     legend.position = "bottom",
@@ -23,6 +53,29 @@ theme_delabj <- function(){
 
 
     )
+}
+
+theme_delabj_dark <- function(){
+  ggplot2::theme_minimal(base_size=12, base_family = "Poppins") %+replace%
+    theme(
+
+      plot.title = element_text(color="#D6D6D6"),
+      axis.title = element_text(color="#D6D6D6"),
+      legend.text = element_text(color="#D6D6D6"),
+      legend.title = element_text(color="#D6D6D6"),
+      legend.position = "bottom",
+      plot.background = element_rect(fill="#343E48", color = "#343E48"),
+
+      panel.grid.major = element_line(color="#495866",
+                                      size=0.5,
+                                      linetype = "solid",
+                                      lineend = "butt"),
+      panel.grid.minor = element_line(color="#3f4b57",
+                                      size=0.5,
+                                      linetype = "solid",
+                                      lineend = "butt"),
+    )+
+    theme(      plot.title.position = "plot")
 }
 
 
