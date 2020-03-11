@@ -1,6 +1,6 @@
-library(ggplot2)
-extrafont::font_import(paths = "fonts/",prompt = F)
-extrafont::loadfonts(device = "win")
+# library(ggplot2)
+# extrafont::font_import(paths = "fonts/",prompt = F)
+# extrafont::loadfonts(device = "win")
 
 #' My Prefered ggplot2 themes
 #'
@@ -27,6 +27,8 @@ extrafont::loadfonts(device = "win")
 #' theme_delabj has a dark grey background and dark gridlines.
 #'
 #' @examples
+#' ## Not Run
+#' library(ggplot2)
 #' df <- data.frame(x = factor(rep(letters[1:5], each = 10)), y = rnorm(50), color=(rep(c("A", "B", "C", "B", "A"), each=10)))
 #' plot <- ggplot(df, aes(x = x, y = y, color=color)) + geom_jitter()
 #'
@@ -35,32 +37,60 @@ extrafont::loadfonts(device = "win")
 #'
 #' plot + theme_delabj_dark
 
-theme_delabj <- function(){
-  ggplot2::theme_minimal(base_size=12, base_family = "Poppins",
-                         base_line_size = .5, base_rect_size = .5 ) %+replace%
-  theme(
-    plot.title.position = "plot",
-    legend.position = "bottom",
-    plot.background = element_rect(fill="#F9F1F1", color = "#F9F1F1"),
-    panel.grid.major = element_line(color="#D6D6D6",
-                                    size=0.5,
-                                    linetype = "solid",
-                                    lineend = "butt"),
-    panel.grid.minor = element_line(color="#F3F3F3",
-                                    size=0.5,
-                                    linetype = "solid",
-                                    lineend = "butt")
-
-
-    )
+theme_delabj <- function(base_size = 12, base_family= "Poppins", base_line_size=.5, base_rect_size = .5){
+  ggplot2::theme_minimal(
+                          base_size = base_size,
+                          base_family = base_family,
+                          base_line_size = base_line_size,
+                          base_rect_size = base_rect_size
+                          ) %+replace%
+    ggplot2::theme(
+                  plot.title.position = "plot",
+                  legend.position = "bottom",
+                  plot.background = element_rect(fill="#F9F1F1", color = "#F9F1F1"),
+                  panel.grid.major = element_line(
+                                                  color="#D6D6D6",
+                                                  size=0.5,
+                                                  linetype = "solid",
+                                                  lineend = "butt"
+                                                  ),
+                  panel.grid.minor = element_line(
+                                                  color="#F3F3F3",
+                                                  size=0.5,
+                                                  linetype = "solid",
+                                                  lineend = "butt"
+                                                  )
+                  )
 }
 
-theme_delabj_dark <- function(){
-  ggplot2::theme_minimal(base_size=12, base_family = "Poppins") %+replace%
-    theme(
+theme_delabj_dark <- function(base_size = 12, base_family= "Poppins", base_line_size=.5, base_rect_size = .5){
+  half_line <- base_size/2
+  ggplot2::theme_minimal(base_size=base_size, base_family = base_family) %+replace%
+    ggplot2::theme(
+      plot.title = element_text(
+        size = rel(1.2),
+        hjust = 0,
+        vjust = 1,
+        margin = margin(b=half_line),
+        color ="#D6D6D6"
+                                ),
+      plot.subtitle = element_text(
+        size = rel(1.2),
+        hjust = 0,
+        vjust = 1,
+        margin = margin(b=half_line),
+        color ="#D6D6D6"
+      ),
+      plot.caption =  element_text(
+        size = rel(1.2),
+        hjust = 0,
+        vjust = 1,
+        margin = margin(b=half_line),
+        color ="#D6D6D6"
+      ),
 
-      plot.title = element_text(color="#D6D6D6"),
       axis.title = element_text(color="#D6D6D6"),
+      axis.text = element_text(color="#D6D6D6"),
       legend.text = element_text(color="#D6D6D6"),
       legend.title = element_text(color="#D6D6D6"),
       legend.position = "bottom",
@@ -74,9 +104,10 @@ theme_delabj_dark <- function(){
                                       size=0.5,
                                       linetype = "solid",
                                       lineend = "butt"),
-    )+
-    theme(      plot.title.position = "plot")
+      plot.title.position = "plot"
+    )
 }
+
 
 
 #' Easily adjust ggplot2 gridlines
@@ -101,7 +132,7 @@ theme_delabj_dark <- function(){
 gridlines_minor <- function(size = 0.5, color="#d6d6d6",linetype= "solid",
                             lineend = NULL, colour = NULL){
   if(!is.null(colour)){color <- colour}
-  return(theme(panel.grid.minor = element_line(color=color,
+  return(ggplot2::theme(panel.grid.minor = element_line(color=color,
                                                size=size,
                                                linetype = linetype,
                                                lineend = lineend)))
@@ -110,7 +141,7 @@ gridlines_minor <- function(size = 0.5, color="#d6d6d6",linetype= "solid",
 gridlines_major <- function(size = 0.5, color="#d6d6d6", linetype= "solid",
                             lineend = NULL, colour = NULL){
   if(!is.null(colour)){color <- colour}
-  return(theme(panel.grid.major = element_line(color=color,
+  return(ggplot2::theme(panel.grid.major = element_line(color=color,
                                                  size=size,
                                                linetype = linetype,
                                                lineend = lineend)))
@@ -154,16 +185,16 @@ gridlines_major <- function(size = 0.5, color="#d6d6d6", linetype= "solid",
 #'  gridlines_off()
 
 gridlines_off <-function(){
-  return(theme(panel.grid.minor= element_blank(),
+  return(ggplot2::theme(panel.grid.minor= element_blank(),
                panel.grid.major= element_blank()
   )
   )
 }
 gridlines_major_off <-function(){
-  return(theme(panel.grid.major= element_blank()))
+  return(ggplot2::theme(panel.grid.major= element_blank()))
 }
 gridlines_minor_off <-function(){
-  return(theme(panel.grid.minor= element_blank()))
+  return(ggplot2::theme(panel.grid.minor= element_blank()))
 }
 
 
@@ -209,17 +240,17 @@ gridlines_minor_off <-function(){
 #'
 #'  # Legend position
 legend_none <- function(){
-  return(theme(legend.position = "none"))
+  return(ggplot2::theme(legend.position = "none"))
 }
 legend_top <- function(){
-  return(theme(legend.position = "top"))
+  return(ggplot2::theme(legend.position = "top"))
 }
 legend_bottom <-function(){
-  return(theme(legend.position = "bottom"))
+  return(ggplot2::theme(legend.position = "bottom"))
 }
 legend_left <-function(){
-  return(theme(legend.position = "left"))
+  return(ggplot2::theme(legend.position = "left"))
 }
 legend_right <-function(){
-  return(theme(legend.position = "right"))
+  return(ggplot2::theme(legend.position = "right"))
 }

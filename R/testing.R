@@ -1,4 +1,5 @@
 # library(ggplot2)
+# library(delabj)
 #
 # df <- data.frame(x = factor(rep(letters[1:5], each = 10)), y = rnorm(50), color=(rep(c("A", "B", "C", "B", "A"), each=10)))
 # plot <- ggplot(df, aes(x = x, y = y, color=color)) + geom_jitter()
@@ -19,6 +20,11 @@
 # plot2 + ggtitle("theme_delabj( )")+
 #   theme_delabj()+
 #   scale_fill_delabj()
+#
+# plot2 + ggtitle("theme_delabj_dark( )")+
+#   theme_delabj_dark()+
+#   scale_fill_delabj()
+#
 #
 #
 # plot3 <- ggplot(df, aes(x=x, y=y, color=y))+
