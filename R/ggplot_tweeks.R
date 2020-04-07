@@ -24,7 +24,7 @@
 #' @param base_rect_size base size for rect elements
 #'
 #' @details theme_delabj has an off white background and light gridlines.
-#' theme_delabj has a dark grey background and dark gridlines.
+#' theme_delabj_dark has a dark grey background and dark gridlines.
 #'
 #' @examples
 #' ## Not Run
