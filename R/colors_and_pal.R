@@ -14,7 +14,10 @@ colors_delabj <- c(
   'plum' = '#5B3758',
   'zune pink' = '#E64E8D',
   'zune orange' = '#EE9537',
-  'black' = "#000000"
+  'black' = "#000000",
+  'retro orange' = "#FCB76D",
+  'retro purple' = '#AC78BA',
+  'retro green' = '#008F9B'
 )
 
 #' Retrieve colors from delabj colors
@@ -49,7 +52,8 @@ get_delabj_colors <- function(...){
 #' @usage palettes_delabj[pallet_name]
 palettes_delabj <- list(
   'main' = get_delabj_colors('maroon', 'plum', 'clear sky', 'cantelope', 'mint'),
-  'zune' = get_delabj_colors('black', 'zune pink', 'zune orange')
+  'zune' = get_delabj_colors('black', 'zune pink', 'zune orange'),
+  'retro' = get_delabj_colors('retro orange', 'retro purple', 'retro green')
 )
 
 
