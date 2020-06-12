@@ -106,9 +106,9 @@ scale_fill_delabj <- function(palette = 'main', discrete= T, reverse = F, ...){
 }
 
 
-#' A dedicated continous palette for the zune colors
+#' A dedicated continuous palette for the zune colors
 #'
-#' @description Dedicated continous scale using the zune colors
+#' @description Dedicated continuous scale using the zune colors
 #' @usage scale_color_zune(...)
 #'
 scale_color_zune <- function( ...){
