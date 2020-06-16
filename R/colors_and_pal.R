@@ -76,7 +76,7 @@ get_delabj_palettes <- function(palette = "main", reverse = FALSE, ...) {
 #' @description Custom color scale to use the delabj palettes.
 #' @usage get_delabj_palettes(palette="main", reverse=  F, ...)
 #'
-#' @param palette Name of the palette (main, zune)
+#' @param palette Name of the palette (main, zune, retro)
 #' @param reverse Boolean: should the palette be reversed
 scale_color_delabj <- function(palette = 'main', discrete= TRUE, reverse = FALSE, ...){
   pal <- get_delabj_palettes(palette = palette, reverse = reverse)
@@ -93,7 +93,7 @@ scale_color_delabj <- function(palette = 'main', discrete= TRUE, reverse = FALSE
 #' @description Custom color scale to use the delabj palettes.
 #' @usage get_delabj_palettes(palette="main", reverse=  F, ...)
 #'
-#' @param palette Name of the palette (main, zune)
+#' @param palette Name of the palette (main, zune, retro)
 #' @param reverse Boolean: should the palette be reversed
 scale_fill_delabj <- function(palette = 'main', discrete= TRUE, reverse = FALSE, ...){
   pal <- get_delabj_palettes(palette = palette, reverse = reverse)
@@ -101,14 +101,15 @@ scale_fill_delabj <- function(palette = 'main', discrete= TRUE, reverse = FALSE,
   if (discrete) {
     ggplot2::discrete_scale("fill", paste0("delabj", palette), palette = pal, ...)
   } else {
-    ggplot2::scale_color_gradientn(colours = pal(256), ...)
+    ggplot2::scale_fill_gradientn(colours = pal(256), ...)
   }
 }
 
 
 #' A dedicated continuous palette for the zune colors
 #'
-#' @description Dedicated continuous scale using the zune colors
+#' @description Dedicated continuous scale using the zune colors.
+#' The Zune was a mp3 player by Microsoft, with a distinctive gradient at the time. I was always a big fan of it and it makes a fairly nice continous scale as well.
 #' @usage scale_color_zune(...)
 #'
 scale_color_zune <- function( ...){
@@ -124,7 +125,7 @@ pal <- get_delabj_palettes(palette = 'zune', reverse = FALSE)
 
   ggplot2::scale_fill_gradientn(colours = pal(256), ...)
 
-}de
+}
 
 
 

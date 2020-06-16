@@ -2,10 +2,11 @@
 % Please edit documentation in R/colors_and_pal.R
 \name{scale_color_zune}
 \alias{scale_color_zune}
-\title{A dedicated continous palette for the zune colors}
+\title{A dedicated continuous palette for the zune colors}
 \usage{
 scale_color_zune(...)
 }
 \description{
-Dedicated continous scale using the zune colors
+Dedicated continuous scale using the zune colors.
+The Zune was a mp3 player by Microsoft, with a distinctive gradient at the time. I was always a big fan of it and it makes a fairly nice continous scale as well.
 }

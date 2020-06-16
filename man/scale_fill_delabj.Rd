@@ -7,7 +7,7 @@
 get_delabj_palettes(palette="main", reverse=  F, ...)
 }
 \arguments{
-\item{palette}{Name of the palette (main, zune)}
+\item{palette}{Name of the palette (main, zune, retro)}
 
 \item{reverse}{Boolean: should the palette be reversed}
 }
