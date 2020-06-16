@@ -78,13 +78,13 @@ get_delabj_palettes <- function(palette = "main", reverse = FALSE, ...) {
 #'
 #' @param palette Name of the palette (main, zune)
 #' @param reverse Boolean: should the palette be reversed
-scale_color_delabj <- function(palette = 'main', discrete= T, reverse = F, ...){
+scale_color_delabj <- function(palette = 'main', discrete= TRUE, reverse = FALSE, ...){
   pal <- get_delabj_palettes(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("colour", paste0("delabj", palette), palette = pal, ...)
+    ggplot2::discrete_scale("colour", paste0("delabj", palette), palette = pal, ...)
   } else {
-    scale_color_gradientn(colours = pal(256), ...)
+    ggplot2::scale_color_gradientn(colours = pal(256), ...)
   }
 }
 
@@ -95,13 +95,13 @@ scale_color_delabj <- function(palette = 'main', discrete= T, reverse = F, ...){
 #'
 #' @param palette Name of the palette (main, zune)
 #' @param reverse Boolean: should the palette be reversed
-scale_fill_delabj <- function(palette = 'main', discrete= T, reverse = F, ...){
+scale_fill_delabj <- function(palette = 'main', discrete= TRUE, reverse = FALSE, ...){
   pal <- get_delabj_palettes(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("fill", paste0("delabj", palette), palette = pal, ...)
+    ggplot2::discrete_scale("fill", paste0("delabj", palette), palette = pal, ...)
   } else {
-    scale_color_gradientn(colours = pal(256), ...)
+    ggplot2::scale_color_gradientn(colours = pal(256), ...)
   }
 }
 
@@ -112,19 +112,19 @@ scale_fill_delabj <- function(palette = 'main', discrete= T, reverse = F, ...){
 #' @usage scale_color_zune(...)
 #'
 scale_color_zune <- function( ...){
-  pal <- get_delabj_palettes(palette = 'zune', reverse = F)
+  pal <- get_delabj_palettes(palette = 'zune', reverse = FALSE)
 
 
-  scale_color_gradientn(colours = pal(256), ...)
+  ggplot2::scale_color_gradientn(colours = pal(256), ...)
 
 }
 scale_fill_zune <- function( ...){
-pal <- get_delabj_palettes(palette = 'zune', reverse = F)
+pal <- get_delabj_palettes(palette = 'zune', reverse = FALSE)
 
 
-  scale_color_gradientn(colours = pal(256), ...)
+  ggplot2::scale_fill_gradientn(colours = pal(256), ...)
 
-}
+}de
 
 
 
