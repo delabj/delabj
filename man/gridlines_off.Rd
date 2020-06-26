@@ -32,6 +32,7 @@ ggplot(mtcars, aes(x=mpg,y=hp))+
 ggplot(mtcars, aes(x=mpg,y=hp))+
  geom_point()+
  gridlines_off()
+ @export
 }
 \author{
 Joshua de la Bruere

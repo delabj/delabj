@@ -7,7 +7,8 @@
 # plot + ggtitle("No theme")
 #
 # plot + theme_delabj()+
-#   ggtitle("theme_delabj()")+
+#   ggtitle("This is theme_delabj()")+
+#   labs(subtitle = "This is text")
 #   scale_color_delabj()
 #
 #

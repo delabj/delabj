@@ -12,7 +12,7 @@
 }
 \description{
 Quick functions to enable faster and more readable theme adjustments to ggplot2 when positioning the legend
-Functons provided are:
+Functions provided are:
 * 'legend_off' disables the legend for a plot
 * 'legend_top' puts the legened in the top posistion
 * 'legend_bottom' puts the legened in the bottom posistion

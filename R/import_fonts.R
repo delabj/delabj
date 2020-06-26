@@ -38,3 +38,18 @@ import_source_code_pro <- function() {
   )
 
 }
+
+
+import_open_sans <- function() {
+
+  rc_font_dir <- system.file("fonts", "open_sans", package="delabj")
+
+  suppressWarnings(suppressMessages(extrafont::font_import(rc_font_dir, prompt=FALSE)))
+
+  message(
+    sprintf(
+      "You will likely need to install these fonts on your system as well.\n\nYou can find them in [%s]",
+      rc_font_dir)
+  )
+
+}

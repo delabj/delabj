@@ -33,15 +33,33 @@
 #'
 #' plot + theme_delabj_dark
 
-theme_delabj <- function(base_size = 12, base_family= "Poppins", base_line_size=.5, base_rect_size = .5){
-  ggplot2::theme_minimal(
+theme_delabj <- function(
+  base_size = 12,
+  base_family= "Poppins",
+  title_font = "Open Sans",
+  base_line_size=.5,
+  base_rect_size = .5){
+  half_line <- base_size*.5
+
+
+  p <- ggplot2::theme_minimal(
     base_size = base_size,
     base_family = base_family,
     base_line_size = base_line_size,
     base_rect_size = base_rect_size
   ) %+replace%
     ggplot2::theme(
+      plot.title = ggplot2::element_text(family=title_font,
+                                         size = base_size * 1.33,
+                                         face = "bold",
+                                         hjust = 0,
+                                         vjust = 1,
+                                         margin = ggplot2::margin(b=half_line)),
       plot.title.position = "plot",
+      plot.subtitle = ggplot2::element_text(family=base_family,
+                                         hjust = 0,
+                                         vjust = 1,
+                                         margin = ggplot2::margin(b=half_line)),
       legend.position = "bottom",
       plot.background = element_rect(fill="#F9F1F1", color = "#F9F1F1"),
       panel.grid.major = element_line(
@@ -57,12 +75,15 @@ theme_delabj <- function(base_size = 12, base_family= "Poppins", base_line_size=
         lineend = "butt"
       )
     )
+
+  return(p)
 }
 
 
 
 theme_delabj_dark <- function(
   font = "Poppins",
+  title_font = "Open Sans",
   main.text.color = "#D6D6D6",
   sub.text.color = "#D6D6D6",
   base.size = 15,
@@ -83,8 +104,9 @@ theme_delabj_dark <- function(
   th <- ggplot2::theme_minimal()
 
   #Text format:
-  #This sets the font, size, type and colour of text for the chart's title
-  th$plot.title=ggplot2::element_text(family=font,
+  #This sets the font, size, type and color of text for the chart's title
+  th$plot.title=ggplot2::element_text(family=title_font,
+                                      face = "semibold",
                                       size=title.size,
                                       color=main.text.color,
                                       hjust = 0,

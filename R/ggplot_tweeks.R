@@ -1,14 +1,10 @@
-
-
-
-#' Easily adjust ggplot2 gridlines
+#' Easily adjust ggplot2 minor gridlines
 #'
 #' @description
 #' A simple function to easily adjust the ggplot gridlines.
 #'  This acts as a wrapper for the theme elements and is a little more user friendly.
 #'
 #'  @usage
-#'  gridlines_major(size = 0.5, color="#D6D6D6", linetype = "solid", lineend = NULL, colour =NULL )
 #'  gridlines_minor(size = 0.5, color="#D6D6D6", linetype = "solid", lineend = NULL, colour =NULL )
 #'
 #'  @return
@@ -19,7 +15,7 @@
 #'  ggplot(df, aes(x = x, y = y, color=color)) +
 #'  geom_point()+
 #'  gridlines_minor(size=4, color = "pink")
-
+#'  @export
 gridlines_minor <- function(size = 0.5, color="#d6d6d6",linetype= "solid",
                             lineend = NULL, colour = NULL){
   if(!is.null(colour)){color <- colour}
@@ -28,7 +24,24 @@ gridlines_minor <- function(size = 0.5, color="#d6d6d6",linetype= "solid",
                                                linetype = linetype,
                                                lineend = lineend)))
 }
-
+#' Easily adjust ggplot2 major gridlines
+#'
+#' @description
+#' A simple function to easily adjust the ggplot gridlines.
+#'  This acts as a wrapper for the theme elements and is a little more user friendly.
+#'
+#'  @usage
+#'  gridlines_major(size = 0.5, color="#D6D6D6", linetype = "solid", lineend = NULL, colour =NULL )
+#'
+#'  @return
+#'  A list with the ggplot theme changes. This can be added to a ggplot object.
+#'
+#'  @examples
+#'  df <- data.frame(x = factor(rep(letters[1:3], each = 10)), y = rnorm(30), color=(rep(c("A", "B"), each=5)))
+#'  ggplot(df, aes(x = x, y = y, color=color)) +
+#'  geom_point()+
+#'  gridlines_major(size=4, color = "pink")
+#'  @export
 gridlines_major <- function(size = 0.5, color="#d6d6d6", linetype= "solid",
                             lineend = NULL, colour = NULL){
   if(!is.null(colour)){color <- colour}
@@ -74,6 +87,7 @@ gridlines_major <- function(size = 0.5, color="#d6d6d6", linetype= "solid",
 #' ggplot(mtcars, aes(x=mpg,y=hp))+
 #'  geom_point()+
 #'  gridlines_off()
+#'  @export
 
 gridlines_off <-function(){
   return(ggplot2::theme(panel.grid.minor= element_blank(),
@@ -81,9 +95,11 @@ gridlines_off <-function(){
   )
   )
 }
+#'  @export
 gridlines_major_off <-function(){
   return(ggplot2::theme(panel.grid.major= element_blank()))
 }
+#'  @export
 gridlines_minor_off <-function(){
   return(ggplot2::theme(panel.grid.minor= element_blank()))
 }
@@ -94,7 +110,7 @@ gridlines_minor_off <-function(){
 #'
 #' @description
 #' Quick functions to enable faster and more readable theme adjustments to ggplot2 when positioning the legend
-#' Functons provided are:
+#' Functions provided are:
 #' * 'legend_off' disables the legend for a plot
 #' * 'legend_top' puts the legened in the top posistion
 #' * 'legend_bottom' puts the legened in the bottom posistion
