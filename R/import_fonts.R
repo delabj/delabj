@@ -10,7 +10,7 @@
 #' import_source_code_pro()
 #'
 #'
-#'
+#' @export
 import_poppins <- function() {
 
   rc_font_dir <- system.file("fonts", "Poppins", package="delabj")
@@ -24,7 +24,7 @@ import_poppins <- function() {
   )
 
 }
-
+#' @export
 import_source_code_pro <- function() {
 
   rc_font_dir <- system.file("fonts", "Source_Code_Pro", package="delabj")

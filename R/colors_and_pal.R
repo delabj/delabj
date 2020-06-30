@@ -78,6 +78,7 @@ get_delabj_palettes <- function(palette = "main", reverse = FALSE, ...) {
 #'
 #' @param palette Name of the palette (main, zune, retro)
 #' @param reverse Boolean: should the palette be reversed
+#' @export
 scale_color_delabj <- function(palette = 'main', discrete= TRUE, reverse = FALSE, ...){
   pal <- get_delabj_palettes(palette = palette, reverse = reverse)
 
@@ -95,6 +96,7 @@ scale_color_delabj <- function(palette = 'main', discrete= TRUE, reverse = FALSE
 #'
 #' @param palette Name of the palette (main, zune, retro)
 #' @param reverse Boolean: should the palette be reversed
+#' @export
 scale_fill_delabj <- function(palette = 'main', discrete= TRUE, reverse = FALSE, ...){
   pal <- get_delabj_palettes(palette = palette, reverse = reverse)
 
@@ -112,6 +114,7 @@ scale_fill_delabj <- function(palette = 'main', discrete= TRUE, reverse = FALSE,
 #' The Zune was a mp3 player by Microsoft, with a distinctive gradient at the time. I was always a big fan of it and it makes a fairly nice continous scale as well.
 #' @usage scale_color_zune(...)
 #'
+#' @export
 scale_color_zune <- function( ...){
   pal <- get_delabj_palettes(palette = 'zune', reverse = FALSE)
 

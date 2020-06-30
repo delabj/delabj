@@ -2,6 +2,10 @@
 % Please edit documentation in R/ggplot_tweeks.R
 \name{legend_none}
 \alias{legend_none}
+\alias{legend_top}
+\alias{legend_bottom}
+\alias{legend_left}
+\alias{legend_right}
 \title{Easily position the ggplot legend}
 \usage{
 'legend_off()'
@@ -9,6 +13,14 @@
 'legend_bottom()'
 'legend_left()'
 'legend_right()'
+
+legend_top()
+
+legend_bottom()
+
+legend_left()
+
+legend_right()
 }
 \description{
 Quick functions to enable faster and more readable theme adjustments to ggplot2 when positioning the legend
@@ -38,6 +50,9 @@ ggplot(mtcars, aes(x=mpg,y=hp, colour = wt))+
  legend_bottom()
 
  # Legend position
+ @rdname legend_positions
+
+No Legend
 }
 \author{
 Joshua de la Bruere

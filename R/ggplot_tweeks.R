@@ -15,6 +15,7 @@
 #'  ggplot(df, aes(x = x, y = y, color=color)) +
 #'  geom_point()+
 #'  gridlines_minor(size=4, color = "pink")
+#'
 #'  @export
 gridlines_minor <- function(size = 0.5, color="#d6d6d6",linetype= "solid",
                             lineend = NULL, colour = NULL){
@@ -146,18 +147,36 @@ gridlines_minor_off <-function(){
 #'  legend_bottom()
 #'
 #'  # Legend position
+#'  @rdname legend_positions
+#'
+
+#' No Legend
+#' @rdname legend_positions
+#' @export
 legend_none <- function(){
   return(ggplot2::theme(legend.position = "none"))
 }
+#' #' Position Legend Top
+#' @rdname legend_positions
+#' @export
 legend_top <- function(){
   return(ggplot2::theme(legend.position = "top"))
 }
+#' Position Legend Bottom
+#' @rdname legend_positions
+#' @export
 legend_bottom <-function(){
   return(ggplot2::theme(legend.position = "bottom"))
 }
+#' Position Legend Left
+#' @rdname legend_positions
+#' @export
 legend_left <-function(){
   return(ggplot2::theme(legend.position = "left"))
 }
+#' Position Legend Right
+#' @rdname legend_positions
+#' @export
 legend_right <-function(){
   return(ggplot2::theme(legend.position = "right"))
 }

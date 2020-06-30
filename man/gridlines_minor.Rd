@@ -27,5 +27,6 @@ A simple function to easily adjust the ggplot gridlines.
  ggplot(df, aes(x = x, y = y, color=color)) +
  geom_point()+
  gridlines_minor(size=4, color = "pink")
+
  @export
 }
