@@ -2,6 +2,7 @@
 % Please edit documentation in R/ggplot_themes.R
 \name{theme_delabj}
 \alias{theme_delabj}
+\alias{theme_delabj_dark}
 \title{My Prefered ggplot2 themes}
 \usage{
 theme_delabj(
@@ -15,6 +16,26 @@ base_size = 12,
 base_family = "Poppins",
 base_line_size = base_size/22,
 base_rect_size = base_size/22)
+
+theme_delabj_dark(
+  font = "Poppins",
+  title_font = "Open Sans",
+  main.text.color = "#D6D6D6",
+  sub.text.color = "#D6D6D6",
+  base.size = 15,
+  plot.background.color = "#343E48",
+  legend.position = "bottom",
+  panel.border.color = "#343E48",
+  panel.background = "#343E48",
+  panel.grid.color = "#495866",
+  axis.text.color = "#D6D6D6",
+  axis.text.size = base.size * 0.67,
+  subtitle.size = base.size * 0.9,
+  legend.text = base.size * 0.6,
+  legend.title = base.size * 0.93,
+  axis.title.size = base.size * 0.8,
+  title.size = 15
+)
 }
 \arguments{
 \item{base_size}{base font size}
@@ -42,4 +63,6 @@ plot <- ggplot(df, aes(x = x, y = y, color=color)) + geom_jitter()
 plot + theme_delabj
 
 plot + theme_delabj_dark
+#' @rdname delabj_themes
+delabj dark mode
 }

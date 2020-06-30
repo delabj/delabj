@@ -32,7 +32,12 @@
 #' plot + theme_delabj
 #'
 #' plot + theme_delabj_dark
+#' #' @rdname delabj_themes
 
+
+#' delabj dark mode
+#' @rdname delabj_themes
+#' @export
 theme_delabj <- function(
   base_size = 12,
   base_family= "Poppins",
@@ -80,7 +85,9 @@ theme_delabj <- function(
 }
 
 
-
+#' delabj dark mode
+#' @rdname delabj_themes
+#' @export
 theme_delabj_dark <- function(
   font = "Poppins",
   title_font = "Open Sans",
@@ -106,7 +113,7 @@ theme_delabj_dark <- function(
   #Text format:
   #This sets the font, size, type and color of text for the chart's title
   th$plot.title=ggplot2::element_text(family=title_font,
-                                      face = "semibold",
+                                      face = "bold",
                                       size=title.size,
                                       color=main.text.color,
                                       hjust = 0,
