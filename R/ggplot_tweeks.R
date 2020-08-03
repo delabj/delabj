@@ -88,7 +88,10 @@ gridlines_major <- function(size = 0.5, color="#d6d6d6", linetype= "solid",
 #' ggplot(mtcars, aes(x=mpg,y=hp))+
 #'  geom_point()+
 #'  gridlines_off()
+#' @rdname gridline functions
 #'  @export
+
+
 
 gridlines_off <-function(){
   return(ggplot2::theme(panel.grid.minor= element_blank(),
@@ -96,10 +99,15 @@ gridlines_off <-function(){
   )
   )
 }
+
+#' Turn  Gridlines Off
+#' @rdname gridline functions
 #'  @export
 gridlines_major_off <-function(){
   return(ggplot2::theme(panel.grid.major= element_blank()))
 }
+#' Turn  Gridlines Off
+#' @rdname gridline functions
 #'  @export
 gridlines_minor_off <-function(){
   return(ggplot2::theme(panel.grid.minor= element_blank()))
