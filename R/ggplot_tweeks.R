@@ -68,8 +68,7 @@ gridlines_major <- function(size = 0.5, color="#d6d6d6", linetype= "solid",
 #' 'gridlines_major_off()'
 #' 'gridlines_minor_off()'
 #'
-#' @author
-#' Joshua de la Bruere
+#' @rdname gridline_functions
 #'
 #' @examples
 #' library(ggplot2)
@@ -88,11 +87,13 @@ gridlines_major <- function(size = 0.5, color="#d6d6d6", linetype= "solid",
 #' ggplot(mtcars, aes(x=mpg,y=hp))+
 #'  geom_point()+
 #'  gridlines_off()
-#' @rdname gridline functions
-#'  @export
 
 
 
+#'
+#' Turn Gridlines off
+#' @rdname gridline_functions
+#' @export
 gridlines_off <-function(){
   return(ggplot2::theme(panel.grid.minor= element_blank(),
                panel.grid.major= element_blank()
@@ -100,14 +101,14 @@ gridlines_off <-function(){
   )
 }
 
-#' Turn  Gridlines Off
-#' @rdname gridline functions
+#' Turn  Major Gridlines Off
+#' @rdname gridline_functions
 #'  @export
 gridlines_major_off <-function(){
   return(ggplot2::theme(panel.grid.major= element_blank()))
 }
-#' Turn  Gridlines Off
-#' @rdname gridline functions
+#' Turn  Minor Gridlines Off
+#' @rdname gridline_functions
 #'  @export
 gridlines_minor_off <-function(){
   return(ggplot2::theme(panel.grid.minor= element_blank()))

@@ -2,6 +2,7 @@
 
 export("%!in%")
 export("%xor%")
+export(gridlines_off)
 export(import_poppins)
 export(import_source_code_pro)
 export(legend_bottom)
