@@ -17,7 +17,12 @@ colors_delabj <- c(
   'black' = "#000000",
   'retro orange' = "#FCB76D",
   'retro purple' = '#AC78BA',
-  'retro green' = '#008F9B'
+  'retro green' = '#008F9B',
+  'meteora highlight' = "#A69174",
+  'meteora main' = "#12100D",
+  'meteora grey' = "#848484",
+  'meteora alt grey' = "#847C7C"
+
 )
 
 #' Retrieve colors from delabj colors
