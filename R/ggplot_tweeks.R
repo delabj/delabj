@@ -87,12 +87,8 @@ gridlines_major <- function(size = 0.5, color="#d6d6d6", linetype= "solid",
 #' ggplot(mtcars, aes(x=mpg,y=hp))+
 #'  geom_point()+
 #'  gridlines_off()
-
-
-
 #'
 #' Turn Gridlines off
-#' @rdname gridline_functions
 #' @export
 gridlines_off <-function(){
   return(ggplot2::theme(panel.grid.minor= element_blank(),
@@ -158,6 +154,8 @@ gridlines_minor_off <-function(){
 #'  # Legend position
 #'  @rdname legend_positions
 #'
+
+
 
 #' No Legend
 #' @rdname legend_positions
