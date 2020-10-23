@@ -4,7 +4,7 @@
 \name{colors_delabj}
 \alias{colors_delabj}
 \title{Set of colors for delabj}
-\format{An object of class \code{character} of length 11.}
+\format{An object of class \code{character} of length 15.}
 \usage{
 colors_delabj[name]
 }

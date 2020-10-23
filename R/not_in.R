@@ -29,14 +29,17 @@
 #' Not In
 #' @rdname operators
 #' @export
+#'
+#'
+`%not_in%` <- function(x, y) {
+  !(x %in% y)
+}
+
 `%!in%` <- function(x, y) {
   !(x %in% y)
 }
 
 
-`%not_in%` <- function(x, y) {
-  !(x %in% y)
-}
 
 
 #' exclusive or
