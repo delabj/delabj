@@ -35,6 +35,10 @@
   !(x %in% y)
 }
 
+#' Snarky not in
+#' @name not_in
+#' @rdname operators
+#' @export
 `%!in%` <- function(x, y) {
   !(x %in% y)
 }
