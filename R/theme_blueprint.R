@@ -4,7 +4,7 @@
 theme_blueprint <- function(
   font = "Helvetica",
   title_font = "Helvetica",
-  main.text.color = "white",
+  main.text.color = "#a7bfd3",
   sub.text.color = "#a7bfd3",
   base.size = 15,
   plot.background.color = "#265c88",
@@ -87,7 +87,7 @@ theme_blueprint <- function(
   #Grid lines
   #This removes all minor gridlines and adds major y gridlines. In many cases you will want to change this to remove y gridlines and add x gridlines. The cookbook shows you examples for doing so
   th$panel.grid.minor=ggplot2::element_line(color="#a7bfd3",
-                                            size=0.125,
+                                            size= 0.05,
                                             linetype = "solid",
                                             lineend = "butt")
   th$panel.grid=ggplot2::element_line(color=panel.grid.color,
@@ -124,3 +124,62 @@ theme_blueprint <- function(
 
 # mtcars %>% ggplot(aes(cyl))+geom_bar(color = "#82a9cc", fill = "#82a9cc", alpha=.75)+theme_blueprint()+labs(title = "Test Plot", subtitle = "Please Ignore", caption = "Sources say captions are important")
 
+
+# # Trying with xkcd
+#
+# data <- mtcars %>%
+#   group_by(cyl) %>%
+#   count()
+#
+# data$xmin <- data$cyl-0.1
+# data$xmax <- data$cyl+0.1
+#
+#
+#   ggplot()+
+#   xkcd::xkcdrect(
+#     data=data,
+#     mapping = aes(
+#       xmin = cyl-.9,
+#       xmax = cyl+.9,
+#       ymin = 0,
+#       ymax = n
+#       ),
+#     alpha = 0.5,
+#     colour = "white",
+#     fill = NA
+#     )+
+#     theme_blueprint()+
+#     labs(title = "Test Plot", subtitle = "Please Ignore", caption = "Sources say captions are important")
+#
+#
+# mtcars %>%
+#   ggplot(aes(as.factor(cyl)))+
+#
+#   ggpattern::geom_bar_pattern(
+#     pattern_colour = NA,
+#     color = "#82a9cc",
+#     fill = "#82a9cc",
+#     pattern_fill = "#82a9cc",
+#     pattern_density = .65,
+#     alpha = 0, pattern_alpha = 1,
+#     size = 2)+
+#   theme_blueprint()+
+#   labs(title = "Test Plot", subtitle = "Please Ignore", caption = "Sources say captions are important")
+#
+#
+# mtcars %>%
+#   ggplot(aes(cyl))+
+#
+#   ggpattern::geom_bar_pattern(
+#     pattern_colour = NA,
+#     color = "#82a9cc",
+#     fill = "#82a9cc",
+#     pattern_fill = "#82a9cc",
+#     pattern_density = .65,
+#     alpha = 0,
+#     pattern_alpha = 1,
+#     size = 2
+#     )+
+#   theme_blueprint()+
+#   labs(title = "Test Plot", subtitle = "Please Ignore", caption = "Sources say captions are important")+
+#   scale_y_continuous(expand = expansion(mult = c(0, .25)))
