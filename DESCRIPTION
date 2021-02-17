@@ -6,8 +6,7 @@ Author: Joshua de la Bruere
 Maintainer: Joshua de la Bruere <Joshua@delabj.com>
 Description: Includes various tweeks and themes that I use consistantly. 
     This package is not designed to be particularly stable and functions may be 
-    spunn off into their own packages at major releases.
-    
+    spun off into their own packages at major releases.
 License: MIT
 Encoding: UTF-8
 LazyData: true
